@@ -18,6 +18,24 @@ const config: PlaywrightTestConfig = {
         channel: 'chrome',
       },
     },
+    {
+      name: 'Chromium',
+      use: {
+        browserName: 'chromium',
+      },
+    },
+    {
+      name: 'Desktop Safari',
+      use: {
+        browserName: 'webkit',
+      },
+    },
+    {
+      name: 'Desktop Firefox',
+      use: {
+        browserName: 'firefox',
+      },
+    },
   ],
   testIgnore: 'tests/utils.spec.ts',
 };
