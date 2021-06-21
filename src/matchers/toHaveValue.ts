@@ -4,7 +4,33 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getElementHandle, formatText, getValue } from '../utils/utils';
 
-const toHaveValue: jest.CustomMatcher = async function (
+/**
+ * Use `toHaveValue` function when you want to check that an element's value is equal to the expected value
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('input')).toHaveValue('user');
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('input);
+ * await expect(toastElement).toHaveValue('user');
+ *
+ * // or using selector with page
+ * await expect([page, 'input']).toHaveValue('user');
+ *
+ * // also you can check value ignoring case sensitive
+ * await expect(page.$('input')).toHaveValue('USER', {ignoreCase: true})
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedValue
+ * @param options
+ * @returns
+ */
+export async function toHaveValue(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedValue: string,
   options?: Options,
@@ -32,6 +58,4 @@ const toHaveValue: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toHaveValue;
+}

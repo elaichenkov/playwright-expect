@@ -13,5 +13,10 @@
       "noImplicitAny": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
+    },
+    "typedocOptions": {
+      "entryPoints": ["src/matchers"],
+      "exclude": ["src/matchers/index.ts"],
+      "out": "docs"
     }
 }

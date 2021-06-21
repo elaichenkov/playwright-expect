@@ -4,7 +4,33 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getText, getElementHandle, formatText } from '../utils/utils';
 
-const toContainText: jest.CustomMatcher = async function (
+/**
+ * Use `toContainText` function when you want to check that an element's text contains the expected string or substring
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('.alert')).toContainText('Success');
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('.alert);
+ * await expect(toastElement).toContainText('Success');
+ *
+ * // or using an array of page and selector
+ * await expect([page, '.alert']).toHaveText('Success');
+ *
+ * // also you can check text ignoring case sensitive
+ * await expect(page.$('.alert')).toHaveText('success', {ignoreCase: true})
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedText
+ * @param options
+ * @returns
+ */
+export async function toContainText(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedText: string,
   options?: Options,
@@ -33,6 +59,4 @@ const toContainText: jest.CustomMatcher = async function (
       message: () => error.message,
     };
   }
-};
-
-export default toContainText;
+}

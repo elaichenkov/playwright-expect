@@ -11,11 +11,13 @@
     "prettier": "prettier '(src|tests)/**/*.ts'",
     "prettier:fix": "prettier --write '(src|tests)/**/*.ts'",
     "eslint:fix": "eslint --fix '*/**/*.ts'",
-    "format": "npm run prettier:fix && npm run eslint:fix"
+    "format": "npm run prettier:fix && npm run eslint:fix",
+    "docs": "npx typedoc"
   },
   "lint-staged": {
-    "(src|tests)/**/*.ts": [
+    "./**/*.ts": [
       "eslint --fix",
+      "prettier --write",
       "git add"
     ]
   },

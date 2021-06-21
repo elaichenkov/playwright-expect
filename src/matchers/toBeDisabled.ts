@@ -4,7 +4,31 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getElementHandle } from '../utils/utils';
 
-const toBeDisabled: jest.CustomMatcher = async function (
+/**
+ * Use `toBeDisabled` function when you want to check that an element is disabled
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('.btn')).toBeDisabled(true);
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('.btn);
+ * await expect(toastElement).toBeDisabled(true);
+ *
+ * // or using selector with page
+ * await expect([page, '.btn']).toBeDisabled(true);
+ *
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedState
+ * @param options
+ * @returns
+ */
+export async function toBeDisabled(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedState: boolean,
   options?: Options,
@@ -25,6 +49,4 @@ const toBeDisabled: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toBeDisabled;
+}

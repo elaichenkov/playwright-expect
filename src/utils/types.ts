@@ -8,6 +8,10 @@ export interface PageWaitForSelectorOptions {
 
 export type PageSelector = [page: Page, selector: string];
 
+/**
+ * A number, or a string containing a number.
+ * @typedef {Promise<ElementHandle<Node>> | ElementHandle<Node> | PageSelector} UIElement
+ */
 export type UIElement = Promise<ElementHandle<Node>> | ElementHandle<Node> | PageSelector;
 
 export type Options = {
@@ -15,11 +19,9 @@ export type Options = {
   ignoreCase?: boolean;
   trim?: boolean;
   waitForState?: PageWaitForSelectorOptions;
-  waitForUrl?: {
-    url: string | RegExp;
-    options: {
-      timeout?: number;
-      waitUntil?: 'load' | 'domcontentloaded' | 'networkidle';
-    };
-  };
+};
+
+export type PageWaitForUrlOptions = {
+  timeout: number;
+  waitUntil?: 'load' | 'domcontentloaded' | 'networkidle';
 };

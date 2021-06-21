@@ -4,7 +4,25 @@ import type { Options } from '../utils/types';
 
 import { formatText, getErrorMessage } from '../utils/utils';
 
-const toContainTitle: jest.CustomMatcher = async function (
+/**
+ * Use `toContainTitle` function when you want to check that page's title contains the expected title
+ *
+ * @example
+ * ```typescript
+ * await expect(page).toContainTitle('Doc');
+ *
+ * // also you can check text ignoring case sensitive
+ * await expect(page).toContainTitle('doc', {ignoreCase: true})
+ * ```
+ *
+ * @param this
+ * @param page
+ * @param expectedTitle
+ * @param options
+ * @returns
+ */
+export async function toContainTitle(
+  this: jest.MatcherContext,
   page: Page,
   expectedTitle: string,
   options?: Options,
@@ -31,6 +49,4 @@ const toContainTitle: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toContainTitle;
+}

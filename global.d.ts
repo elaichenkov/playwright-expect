@@ -11,6 +11,11 @@ type Options = {
   waitForState?: PageWaitForSelectorOptions;
 };
 
+type PageWaitForUrlOptions = {
+  timeout: number;
+  waitUntil?: 'load' | 'domcontentloaded' | 'networkidle';
+};
+
 declare global {
   namespace PlaywrightTest {
     interface Matchers<R> extends expect.Matchers<R> {
@@ -28,11 +33,13 @@ declare global {
        * If the promise is fulfilled the assertion fails.
        */
       rejects: PlaywrightTest.Matchers<Promise<R>>;
+
+      //* Custom matchers */
       toHaveText(expectedText: string, options?: Options): Promise<R>;
       toContainText(expectedText: string, options?: Options): Promise<R>;
       toMatchText(expectedPattern: RegExp | string, options?: Options): Promise<R>;
-      toHaveUrl(expectedUrl: RegExp | string, options?: Options): Promise<R>;
-      toContainUrl(expectedUrl: RegExp | string, options?: Options): Promise<R>;
+      toHaveUrl(expectedUrl: RegExp | string, options?: PageWaitForUrlOptions): Promise<R>;
+      toContainUrl(expectedUrl: RegExp | string, options?: PageWaitForUrlOptions): Promise<R>;
       toHaveTitle(expectedTitle: string, options?: Options): Promise<R>;
       toContainTitle(expectedTitle: string, options?: Options): Promise<R>;
       toBeFocused(expectedState: boolean, options?: Options): Promise<R>;

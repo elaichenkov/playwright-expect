@@ -4,7 +4,31 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getElementHandle } from '../utils/utils';
 
-const toBeEnabled: jest.CustomMatcher = async function (
+/**
+ * Use `toBeEnabled` function when you want to check that an element is enabled
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('.btn')).toBeEnabled(true);
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('.btn);
+ * await expect(toastElement).toBeEnabled(true);
+ *
+ * // or using selector with page
+ * await expect([page, '.btn']).toBeEnabled(true);
+ *
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedState
+ * @param options
+ * @returns
+ */
+export async function toBeEnabled(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedState: boolean,
   options?: Options,
@@ -25,6 +49,4 @@ const toBeEnabled: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toBeEnabled;
+}

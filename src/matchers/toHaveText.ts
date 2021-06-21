@@ -4,7 +4,33 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getText, getElementHandle, formatText } from '../utils/utils';
 
-const toHaveText: jest.CustomMatcher = async function (
+/**
+ * Use `toHaveText` function when you want to check that an element's text is equal to the expected text
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('.alert')).toHaveText('Success message');
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('.alert);
+ * await expect(toastElement).toHaveText('Success message');
+ *
+ * // or using selector with page
+ * await expect([page, '.alert']).toHaveText('Success message');
+ *
+ * // also you can check text ignoring case sensitive
+ * await expect(page.$('.alert')).toHaveText('success message', {ignoreCase: true})
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedText
+ * @param options
+ * @returns
+ */
+export async function toHaveText(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedText: string,
   options?: Options,
@@ -32,6 +58,4 @@ const toHaveText: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toHaveText;
+}

@@ -4,7 +4,31 @@ import type { Options } from '../utils/types';
 import { UIElement } from '../utils/types';
 import { getErrorMessage, getElementHandle } from '../utils/utils';
 
-const toBeVisible: jest.CustomMatcher = async function (
+/**
+ * Use `toBeVisible` function when you want to check that an element is visible
+ *
+ * @example
+ * ```typescript
+ * // could be used with Promise<ElementHandle>
+ * await expect(page.$('.btn')).toBeVisible(true);
+ *
+ * // or with ElementHandle
+ * const toastElement = await page.$('.btn);
+ * await expect(toastElement).toBeVisible(true);
+ *
+ * // or using selector with page
+ * await expect([page, '.btn']).toBeVisible(true);
+ *
+ * ```
+ *
+ * @param this
+ * @param element
+ * @param expectedState
+ * @param options
+ * @returns
+ */
+export async function toBeVisible(
+  this: jest.MatcherContext,
   element: UIElement,
   expectedState: boolean,
   options?: Options,
@@ -29,6 +53,4 @@ const toBeVisible: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toBeVisible;
+}

@@ -4,7 +4,25 @@ import type { Options } from '../utils/types';
 
 import { formatText, getErrorMessage } from '../utils/utils';
 
-const toHaveTitle: jest.CustomMatcher = async function (
+/**
+ * Use `toHaveTitle` function when you want to check that page's title is equal to the expected title
+ *
+ * @example
+ * ```typescript
+ * await expect(page).toHaveTitle('Documentation');
+ *
+ * // also you can check text ignoring case sensitive
+ * await expect(page).toHaveTitle('documentation', {ignoreCase: true})
+ * ```
+ *
+ * @param this
+ * @param page
+ * @param expectedTitle
+ * @param options
+ * @returns
+ */
+export async function toHaveTitle(
+  this: jest.MatcherContext,
   page: Page,
   expectedTitle: string,
   options?: Options,
@@ -31,6 +49,4 @@ const toHaveTitle: jest.CustomMatcher = async function (
       message: () => error.toString(),
     };
   }
-};
-
-export default toHaveTitle;
+}
