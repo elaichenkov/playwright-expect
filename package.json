@@ -17,7 +17,7 @@
     "test:debug": "DEBUG=pw:api npx playwright test",
     "prettier": "prettier '(src|tests)/**/*.ts'",
     "prettier:fix": "prettier --write '(src|tests)/**/*.ts'",
-    "eslint:fix": "eslint --fix '*/**/*.ts'",
+    "eslint:fix": "eslint --fix '{src,tests}/**/*.ts'",
     "format": "npm run prettier:fix && npm run eslint:fix",
     "docs": "npx typedoc && touch ./docs/.nojekyll",
     "release": "release-it --github.release",
