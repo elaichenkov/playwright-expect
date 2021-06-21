@@ -12,7 +12,7 @@ And [expect-playwright-test](https://github.com/elaichenkov/expect-playwright-te
 * can ignore case sensitive and trim values before asserting
 * waits for expectation to succeed
 * works in Jest and Playwright Test
-* builtin types for TypeScript and JS autocompletion
+* built-in types for TypeScript and JavaScript autocompletion
 
 # Usage
 
