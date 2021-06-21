@@ -61,15 +61,138 @@
 				<a href="#playwright-expect-" id="playwright-expect-" style="color: inherit; text-decoration: none;">
 					<h1>playwright-expect <a href="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml"><img src="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg" alt="tests"></a></h1>
 				</a>
+				<p>The <code>playwright-expect</code> is an assertion library for TypeScript and JavaScript intended for use with a test runner such as <a href="https://jestjs.io/">Jest</a> or <a href="https://playwright.dev/">Playwright Test</a>. It lets you write better assertions for end-to-end testing.</p>
+				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
+					<h1>Motivation</h1>
+				</a>
+				<blockquote>
+					<p><a href="https://github.com/playwright-community/expect-playwright">expect-playwright</a> is a great library, but it contains a few methods.</p>
+				</blockquote>
+				<p>And <a href="https://github.com/elaichenkov/playwright-expect">playwright-expect</a> is a great library too, with all major methods and extra features such as waits, ignore case sensitive, trim. All in all, It has everything that you demand to accomplish end-to-end testing needs.</p>
+				<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
+					<h1>Key Features</h1>
+				</a>
+				<ul>
+					<li>rich and easy to use;</li>
+					<li>exhaustive messages and diff highlights;</li>
+					<li>can ignore case sensitive and trim values before asserting;</li>
+					<li>waits for expectation to succeed;</li>
+					<li>works in Jest and Playwright Test;</li>
+					<li>built-in types for TypeScript and JavaScript autocompletion.</li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h1>Usage</h1>
+				</a>
+				<pre><code class="language-sh"><span style="color: #000000">npm i -D playwright-expect</span>
+</code></pre>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h1><a href="">API</a></h1>
+				</a>
+				<ul>
+					<li>toBeDisabled</li>
+					<li>toBeEnabled</li>
+					<li>toBeChecked</li>
+					<li>toBeFocused</li>
+					<li>toBeVisible</li>
+					<li>toContainText</li>
+					<li>toContainTitle</li>
+					<li>toContainUrl</li>
+					<li>toContainValue</li>
+					<li>toHaveCount</li>
+					<li>toHaveText</li>
+					<li>toHaveTitle</li>
+					<li>toHaveUrl</li>
+					<li>toHaveValue</li>
+					<li>toMatchText</li>
+				</ul>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h1>Examples</h1>
+				</a>
+				<blockquote>
+					<p>Almost all methods can accept element in three ways:</p>
+					<ol>
+						<li>ElementHandle</li>
+						<li>Promise&lt;ElementHandle&gt;</li>
+						<li>[page, selector]</li>
+					</ol>
+				</blockquote>
+				<a href="#use-tohavetext-to-check-that-element39s-text-equals-to-the-expected" id="use-tohavetext-to-check-that-element39s-text-equals-to-the-expected" style="color: inherit; text-decoration: none;">
+					<h2>Use <code>toHaveText</code> to check that element&#39;s text equals to the expected</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #008000">// Using ElementHandle</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">title</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">title</span><span style="color: #000000">).</span><span style="color: #795E26">toHaveText</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Home&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Using Promise&lt;ElementHandle&gt;</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toHaveText</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Home&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Using an array of page and selector. Furthermore, you can pass options such as ignoreCase and trim</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;h1&#039;</span><span style="color: #000000">]).</span><span style="color: #795E26">toHaveText</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;home&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">ignoreCase:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> });</span>
+</code></pre>
+				<a href="#use-tobevisible-to-check-that-element-is-visible" id="use-tobevisible-to-check-that-element-is-visible" style="color: inherit; text-decoration: none;">
+					<h2>Use <code>toBeVisible</code> to check that element is visible</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #008000">// Using ElementHandle</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">button</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">title</span><span style="color: #000000">).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">();</span>
+
+<span style="color: #008000">// Using Promise&lt;ElementHandle&gt;</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">); </span><span style="color: #008000">// true here is optional</span>
+
+<span style="color: #008000">// Using an array of page and selector</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">]).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#use-tobeenabled-and-tobedisabled-to-check-that-element-is-enableddisabled" id="use-tobeenabled-and-tobedisabled-to-check-that-element-is-enableddisabled" style="color: inherit; text-decoration: none;">
+					<h2>Use <code>toBeEnabled</code> and <code>toBeDisabled</code> to check that element is enabled/disabled</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #008000">// Using ElementHandle</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">button</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">title</span><span style="color: #000000">).</span><span style="color: #795E26">toBeEnabled</span><span style="color: #000000">();</span>
+
+<span style="color: #008000">// Using Promise&lt;ElementHandle&gt;</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toBeEnabled</span><span style="color: #000000">();</span>
+
+<span style="color: #008000">// Using an array of page and selector</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">]).</span><span style="color: #795E26">toBeEnabled</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Also, you can use `not` to verify opposite</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">]).</span><span style="color: #001080">not</span><span style="color: #000000">.</span><span style="color: #795E26">toBeEnabled</span><span style="color: #000000">();</span>
+
+<span style="color: #008000">// Even more, you can check that element is disabled</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#next&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toBeDisabled</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#use-tohaveurl-and-tocontainurl-to-check-that-page39s-url-equals-or-contains-the-expected-url" id="use-tohaveurl-and-tocontainurl-to-check-that-page39s-url-equals-or-contains-the-expected-url" style="color: inherit; text-decoration: none;">
+					<h2>Use <code>toHaveUrl</code> and <code>toContainUrl</code> to check that page&#39;s url equals or contains the expected url</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toHaveUrl</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://duckduckgo.com/&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Also, you can wait for the url</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toHaveUrl</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://duckduckgo.com/&#039;</span><span style="color: #000000">, { </span><span style="color: #001080">timeout:</span><span style="color: #000000"> </span><span style="color: #098658">5000</span><span style="color: #000000"> });</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toContainUrl</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;duck&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#use-tohavetitle-or-tocontaintitle-to-check-that-page39s-title-equals-or-contains-the-expected-title" id="use-tohavetitle-or-tocontaintitle-to-check-that-page39s-title-equals-or-contains-the-expected-title" style="color: inherit; text-decoration: none;">
+					<h2>Use <code>toHaveTitle</code> or <code>toContainTitle</code> to check that page&#39;s title equals or contains the expected title</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toHaveTitle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;DuckDuckGo — Privacy, simplified.&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toContainTitle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Privacy&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// ignore case sensitive</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">).</span><span style="color: #795E26">toContainTitle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;privacy&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">ignoreCase:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">});</span>
+</code></pre>
+				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+					<h1>Author</h1>
+				</a>
+				<p>Yevhen Laichenkov <a href="mailto:elaichenkov@gmail.com">elaichenkov@gmail.com</a></p>
 				<a href="#inspired-by" id="inspired-by" style="color: inherit; text-decoration: none;">
 					<h1>Inspired by</h1>
 				</a>
 				<p><a href="https://github.com/playwright-community/expect-playwright">expect-playwright</a></p>
 				<p><a href="https://github.com/webdriverio/expect-webdriverio">expect-webdriverio</a></p>
-				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
-					<h1>Author</h1>
-				</a>
-				<p>Yevhen Laichenkov <a href="mailto:elaichenkov@gmail.com">elaichenkov@gmail.com</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -77,6 +200,9 @@
 				<ul>
 					<li class=" ">
 						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tobechecked.html">to<wbr>BeChecked</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/tobedisabled.html">to<wbr>BeDisabled</a>
