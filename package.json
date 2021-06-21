@@ -14,13 +14,6 @@
     "format": "npm run prettier:fix && npm run eslint:fix",
     "docs": "npx typedoc"
   },
-  "lint-staged": {
-    "./**/*.ts": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elaichenkov/expect-playwright-test.git"
@@ -54,7 +47,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
-    "husky": "6.0.0",
     "jest": "^27.0.4",
     "lint-staged": "11.0.0",
     "playwright": "^1.12.2",
