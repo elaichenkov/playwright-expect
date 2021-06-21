@@ -24,6 +24,7 @@ npm i -D expect-playwright-test
 # [API]()
 * toBeDisabled
 * toBeEnabled
+* toBeChecked
 * toBeFocused
 * toBeVisible
 * toContainText

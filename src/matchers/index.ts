@@ -12,6 +12,7 @@ import { toBeEnabled } from './toBeEnabled';
 import { toBeDisabled } from './toBeDisabled';
 import { toBeVisible } from './toBeVisible';
 import { toHaveCount } from './toHaveCount';
+import { toBeChecked } from './toBeChecked';
 
 export default {
   toHaveText,
@@ -28,4 +29,5 @@ export default {
   toBeDisabled,
   toBeVisible,
   toHaveCount,
+  toBeChecked,
 };

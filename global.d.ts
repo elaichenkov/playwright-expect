@@ -46,6 +46,7 @@ declare global {
       toHaveValue(expectedValue: string, options?: Options): Promise<R>;
       toContainValue(expectedValue: string, options?: Options): Promise<R>;
       toBeEnabled(expectedState?: boolean, options?: Options): Promise<R>;
+      toBeChecked(expectedState?: boolean, options?: Options): Promise<R>;
       toBeDisabled(expectedState?: boolean, options?: Options): Promise<R>;
       toBeVisible(expectedState?: boolean, options?: Options): Promise<R>;
       toHaveCount(expectedCount: number): Promise<R>;
