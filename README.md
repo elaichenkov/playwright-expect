@@ -1,6 +1,6 @@
 # expect-playwright-test [![tests](https://github.com/elaichenkov/expect-playwright-test/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/expect-playwright-test/actions/workflows/tests.yml)
 
-The `expect-playwright-test` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as Jest or Playwright Test. That lets you write better assertions for end-to-end testing.
+The `expect-playwright-test` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as [Jest](https://jestjs.io/) or [Playwright Test](https://playwright.dev/). That lets you write better assertions for end-to-end testing.
 
 # Motivation
 > [expect-playwright](https://github.com/playwright-community/expect-playwright) is a great library, but there are a few methods and that's it.
