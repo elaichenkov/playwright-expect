@@ -1,6 +1,6 @@
 # expect-playwright-test [![tests](https://github.com/elaichenkov/expect-playwright-test/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/expect-playwright-test/actions/workflows/tests.yml)
 
-The `expect-playwright-test` is a powerful matchers. That lets you write better assertions for E2E testing using Jest or Playwright Test runners.
+The `expect-playwright-test` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as Jest or Playwright Test. That lets you write better assertions for end-to-end testing.
 
 # Motivation
 > [expect-playwright](https://github.com/playwright-community/expect-playwright) is a great library, but there are a few methods and that's it.
@@ -8,6 +8,7 @@ The `expect-playwright-test` is a powerful matchers. That lets you write better 
 And [expect-playwright-test](https://github.com/elaichenkov/expect-playwright-test) is a great library too, with all major methods and extra features such as waits, ignore case sensitive, trim. All in all, It has everything that you demand to accomplish end-to-end testing needs.
 
 ## Key Features
+* rich and easy to use
 * exhaustive messages and diff highlights
 * can ignore case sensitive and trim values before asserting
 * waits for expectation to succeed
