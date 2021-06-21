@@ -1,4 +1,4 @@
-# playwright-expect [![tests](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml)
+# playwright-expect [![Test](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml)
 
 The `playwright-expect` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as [Jest](https://jestjs.io/) or [Playwright Test](https://playwright.dev/). It lets you write better assertions for end-to-end testing.
 
@@ -17,9 +17,29 @@ And [playwright-expect](https://github.com/elaichenkov/playwright-expect) is a g
 
 # Usage
 
+## Install
 ```sh
 npm i -D playwright-expect
 ```
+## Playwright Test - TypeScript
+```typescript
+// playwright.config.ts
+import { expect } from '@playwright/test';
+import { matchers } from 'playwright-expect';
+
+// add custom matchers
+expect.extend(matchers);
+```
+## Playwright Test - JavaScript
+```typescript
+// playwright.config.js
+const { expect } = require('@playwright/test');
+const { matchers } = require('playwright-expect');
+
+// add custom matchers
+expect.extend(matchers);
+```
+
 
 # [API]()
 * toBeDisabled
