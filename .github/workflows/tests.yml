@@ -30,9 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
-      - name: Install browsers
-        run: npx playwright install-deps
 
       - name: Run tests
         run: npm test 
