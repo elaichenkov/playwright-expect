@@ -2,9 +2,16 @@
   "name": "playwright-expect",
   "version": "1.0.0",
   "description": "The playwright-expect is an assertion library for TypeScript and JavaScript intended for use with a test runner such as Jest or Playwright Test.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "types": "./global.d.ts",
+  "files": [
+    "lib/src"
+  ],
   "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run format && npm test",
+    "version": "npm run format:write",
+    "build": "tsc",
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
     "test:debug": "DEBUG=pw:api npx playwright test",
@@ -12,7 +19,12 @@
     "prettier:fix": "prettier --write '(src|tests)/**/*.ts'",
     "eslint:fix": "eslint --fix '*/**/*.ts'",
     "format": "npm run prettier:fix && npm run eslint:fix",
-    "docs": "npx typedoc && touch ./docs/.nojekyll"
+    "docs": "npx typedoc && touch ./docs/.nojekyll",
+    "release": "release-it --github.release",
+    "release:ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
+    "release:patch": "npm run release -- patch",
+    "release:minor": "npm run release -- minor",
+    "release:major": "npm run release -- major"
   },
   "repository": {
     "type": "git",
@@ -23,6 +35,7 @@
     "expect",
     "assertions",
     "matchers",
+    "jest",
     "typescript",
     "automation",
     "testing",
@@ -49,7 +62,6 @@
     "eslint-plugin-react": "^7.24.0",
     "jest": "^27.0.4",
     "lint-staged": "11.0.0",
-    "playwright": "^1.12.2",
     "playwright-core": "^1.12.2",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.3",

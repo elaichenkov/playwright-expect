@@ -12,8 +12,10 @@
       "esModuleInterop": true,
       "noImplicitAny": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./lib"
     },
+    "exclude": ["./lib", "./tests", "./playwright.config.ts"],
     "typedocOptions": {
       "entryPoints": ["src/matchers"],
       "exclude": ["src/matchers/index.ts"],
