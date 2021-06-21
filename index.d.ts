@@ -1,21 +1,5 @@
-interface PageWaitForSelectorOptions {
-  selector?: string;
-  state?: 'attached' | 'detached' | 'visible' | 'hidden';
-  timeout?: number;
-}
-
-type Options = {
-  textMethod?: 'textContent' | 'innerText';
-  ignoreCase?: boolean;
-  trim?: boolean;
-  waitForState?: PageWaitForSelectorOptions;
-};
-
-type PageWaitForUrlOptions = {
-  timeout: number;
-  waitUntil?: 'load' | 'domcontentloaded' | 'networkidle';
-};
-
+import type expect from 'expect';
+import type { Options, PageWaitForUrlOptions } from './src/utils/types';
 declare global {
   namespace PlaywrightTest {
     interface Matchers<R> extends expect.Matchers<R> {
