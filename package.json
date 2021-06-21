@@ -1,7 +1,7 @@
 {
-  "name": "expect-playwright-test",
+  "name": "playwright-expect",
   "version": "1.0.0",
-  "description": "",
+  "description": "The playwright-expect is an assertion library for TypeScript and JavaScript intended for use with a test runner such as Jest or Playwright Test.",
   "main": "index.js",
   "types": "./global.d.ts",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elaichenkov/expect-playwright-test.git"
+    "url": "git+https://github.com/elaichenkov/playwright-expect.git"
   },
   "keywords": [
     "playwright",
@@ -31,9 +31,9 @@
   "author": "Yevhen Laichenkov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elaichenkov/expect-playwright-test/issues"
+    "url": "https://github.com/elaichenkov/playwright-expect/issues"
   },
-  "homepage": "https://github.com/elaichenkov/expect-playwright-test#readme",
+  "homepage": "https://github.com/elaichenkov/playwright-expect#readme",
   "devDependencies": {
     "@playwright/test": "^1.12.2",
     "@types/jest": "^26.0.23",
