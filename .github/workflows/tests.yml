@@ -24,8 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - name: Install dependencies
+  
+      - name: Install dependency
         run: npm ci
+
+      - name: Install playwright dependency
+        run: npx playwright install-deps
 
       - name: Run tests
         run: npm test
