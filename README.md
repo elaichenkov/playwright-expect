@@ -41,22 +41,25 @@ expect.extend(matchers);
 ```
 
 
-# [API]()
-* toBeDisabled
-* toBeEnabled
-* toBeChecked
-* toBeFocused
-* toBeVisible
-* toContainText
-* toContainTitle
-* toContainUrl
-* toContainValue
-* toHaveCount
-* toHaveText
-* toHaveTitle
-* toHaveUrl
-* toHaveValue
-* toMatchText
+# [API](https://elaichenkov.github.io/playwright-expect/modules.html)
+
+> Please, read [API](https://elaichenkov.github.io/playwright-expect/modules.html) documentation
+ 
+* [toBeDisabled](https://elaichenkov.github.io/playwright-expect/modules/tobedisabled.html)
+* [toBeEnabled](https://elaichenkov.github.io/playwright-expect/modules/tobeenabled.html)
+* [toBeChecked](https://elaichenkov.github.io/playwright-expect/modules/tobechecked.html)
+* [toBeFocused](https://elaichenkov.github.io/playwright-expect/modules/tobefocused.html)
+* [toBeVisible](https://elaichenkov.github.io/playwright-expect/modules/tobevisible.html)
+* [toContainText](https://elaichenkov.github.io/playwright-expect/modules/tocontaintext.html)
+* [toContainTitle](https://elaichenkov.github.io/playwright-expect/modules/tocontaintitle.html)
+* [toContainUrl](https://elaichenkov.github.io/playwright-expect/modules/tocontainurl.html)
+* [toContainValue](https://elaichenkov.github.io/playwright-expect/modules/tocontainvalue.html)
+* [toHaveCount](https://elaichenkov.github.io/playwright-expect/modules/tohavecount.html)
+* [toHaveText](https://elaichenkov.github.io/playwright-expect/modules/tohavetext.html)
+* [toHaveTitle](https://elaichenkov.github.io/playwright-expect/modules/tohavetitle.html)
+* [toHaveUrl](https://elaichenkov.github.io/playwright-expect/modules/tohaveurl.html)
+* [toHaveValue](https://elaichenkov.github.io/playwright-expect/modules/tohavevalue.html)
+* [toMatchText](https://elaichenkov.github.io/playwright-expect/modules/tomatchtext.html)
 
 # Examples
 
