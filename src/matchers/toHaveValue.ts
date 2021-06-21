@@ -16,7 +16,7 @@ import { getErrorMessage, getElementHandle, formatText, getValue } from '../util
  * const toastElement = await page.$('input);
  * await expect(toastElement).toHaveValue('user');
  *
- * // or using selector with page
+ * // or using an array of page and selector
  * await expect([page, 'input']).toHaveValue('user');
  *
  * // also you can check value ignoring case sensitive

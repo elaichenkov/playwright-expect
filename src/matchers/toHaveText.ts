@@ -16,7 +16,7 @@ import { getErrorMessage, getText, getElementHandle, formatText } from '../utils
  * const toastElement = await page.$('.alert);
  * await expect(toastElement).toHaveText('Success message');
  *
- * // or using selector with page
+ * // or using an array of page and selector
  * await expect([page, '.alert']).toHaveText('Success message');
  *
  * // also you can check text ignoring case sensitive

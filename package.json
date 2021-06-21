@@ -12,7 +12,7 @@
     "prettier:fix": "prettier --write '(src|tests)/**/*.ts'",
     "eslint:fix": "eslint --fix '*/**/*.ts'",
     "format": "npm run prettier:fix && npm run eslint:fix",
-    "docs": "npx typedoc"
+    "docs": "npx typedoc && touch ./docs/.nojekyll"
   },
   "repository": {
     "type": "git",

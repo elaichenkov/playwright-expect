@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>toBeVisible | expect-playwright-test</title>
+	<title>toHaveCount | expect-playwright-test</title>
 	<meta name="description" content="Documentation for expect-playwright-test">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">expect-playwright-test</a>
 				</li>
 				<li>
-					<a href="tobevisible.html">toBeVisible</a>
+					<a href="tohavecount.html">toHaveCount</a>
 				</li>
 			</ul>
-			<h1>Module toBeVisible</h1>
+			<h1>Module toHaveCount</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="tobevisible.html#tobevisible-1" class="tsd-kind-icon">to<wbr>BeVisible</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="tohavecount.html#tohavecount-1" class="tsd-kind-icon">to<wbr>Have<wbr>Count</a></li>
 							</ul>
 						</section>
 					</div>
@@ -81,34 +81,33 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="tobevisible-1" class="tsd-anchor"></a>
-					<h3>to<wbr>BeVisible</h3>
+					<a name="tohavecount-1" class="tsd-anchor"></a>
+					<h3>to<wbr>Have<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>BeVisible<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UIElement</span>, expectedState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SyncExpectationResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Have<wbr>Count<span class="tsd-signature-symbol">(</span>elements<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UIElements</span>, expectedCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SyncExpectationResult</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/elaichenkov/expect-playwright-test/blob/00d336d/src/matchers/toBeVisible.ts#L30">toBeVisible.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/elaichenkov/expect-playwright-test/blob/00d336d/src/matchers/toHaveCount.ts#L28">toHaveCount.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Use <code>toBeVisible</code> function when you want to check that an element is visible</p>
+									<p>Use <code>toHaveCount</code> function when you want to check that an elements length is equal to the expected length</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span style="color: #008000">// could be used with Promise&lt;ElementHandle&gt;</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;.btn&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+									<dd><pre><code class="language-typescript"><span style="color: #008000">// could be used with Promise&lt;Array&lt;ElementHandle&gt;&gt;</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;img&#039;</span><span style="color: #000000">)).</span><span style="color: #795E26">toHaveCount</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">);</span>
 
-<span style="color: #008000">// or with ElementHandle</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">toastElement</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;.btn)</span><span style="color: #CD3131">;</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">toastElement</span><span style="color: #000000">).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+<span style="color: #008000">// or with Array&lt;ElementHandle&gt;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">images</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">page</span><span style="color: #000000">.</span><span style="color: #795E26">$$</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;img&#039;</span><span style="color: #000000">);</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">(</span><span style="color: #001080">toastElement</span><span style="color: #000000">).</span><span style="color: #795E26">toHaveCount</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">);</span>
 
 <span style="color: #008000">// or using an array of page and selector</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;.btn&#039;</span><span style="color: #000000">]).</span><span style="color: #795E26">toBeVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
-
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">expect</span><span style="color: #000000">([</span><span style="color: #001080">page</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;img&#039;</span><span style="color: #000000">]).</span><span style="color: #795E26">toHaveCount</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">);</span>
 </code></pre>
 									</dd>
 								</dl>
@@ -116,13 +115,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>element: <span class="tsd-signature-type">UIElement</span></h5>
+									<h5>elements: <span class="tsd-signature-type">UIElements</span></h5>
 								</li>
 								<li>
-									<h5>expectedState: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Options</span></h5>
+									<h5>expectedCount: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SyncExpectationResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -146,7 +142,7 @@
 					<li class=" tsd-kind-module">
 						<a href="tobefocused.html">to<wbr>BeFocused</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="tobevisible.html">to<wbr>BeVisible</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -161,7 +157,7 @@
 					<li class=" tsd-kind-module">
 						<a href="tocontainvalue.html">to<wbr>Contain<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="tohavecount.html">to<wbr>Have<wbr>Count</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -184,7 +180,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="tobevisible.html#tobevisible-1" class="tsd-kind-icon">to<wbr>BeVisible</a>
+						<a href="tohavecount.html#tohavecount-1" class="tsd-kind-icon">to<wbr>Have<wbr>Count</a>
 					</li>
 				</ul>
 			</nav>

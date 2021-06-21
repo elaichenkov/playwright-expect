@@ -15,7 +15,7 @@ import { getElements, getErrorMessage } from '../utils/utils';
  * const images = await page.$$('img');
  * await expect(toastElement).toHaveCount(3);
  *
- * // or using selector with page
+ * // or using an array of page and selector
  * await expect([page, 'img']).toHaveCount(3);
  * ```
  *

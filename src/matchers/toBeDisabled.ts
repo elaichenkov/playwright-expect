@@ -16,7 +16,7 @@ import { getErrorMessage, getElementHandle } from '../utils/utils';
  * const toastElement = await page.$('.btn);
  * await expect(toastElement).toBeDisabled(true);
  *
- * // or using selector with page
+ * // or using an array of page and selector
  * await expect([page, '.btn']).toBeDisabled(true);
  *
  * ```

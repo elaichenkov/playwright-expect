@@ -16,7 +16,7 @@ import { getErrorMessage, getText, getElementHandle } from '../utils/utils';
  * const toastElement = await page.$('.alert);
  * await expect(toastElement).toMatchText(/[S|s]uccess/);
  *
- * // or using selector with page
+ * // or using an array of page and selector
  * await expect([page, '.alert']).toMatchText(/[S|s]uccess/);
  * ```
  *
