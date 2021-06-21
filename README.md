@@ -7,7 +7,7 @@ The `expect-playwright-test` is an assertion library for TypeScript and JavaScri
 
 And [expect-playwright-test](https://github.com/elaichenkov/expect-playwright-test) is a great library too, with all major methods and extra features such as waits, ignore case sensitive, trim. All in all, It has everything that you demand to accomplish end-to-end testing needs.
 
-## Key Features
+# Key Features
 * rich and easy to use
 * exhaustive messages and diff highlights
 * can ignore case sensitive and trim values before asserting
