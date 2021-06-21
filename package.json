@@ -11,7 +11,7 @@
     "prepare": "npm run build",
     "version": "npm run format",
     "build": "tsc",
-    "postbuild": "cp ./global.d.ts lib/",
+    "postbuild": "cp ./index.d.ts lib/",
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
     "test:debug": "DEBUG=pw:api npx playwright test",
