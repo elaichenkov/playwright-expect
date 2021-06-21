@@ -16,7 +16,7 @@ test.describe('toBeDisabled', () => {
   test('verify method with ElementHandle', async ({ page }) => {
     await page.$eval(selector, (button) => button.setAttribute('disabled', 'true'));
 
-    await expect(await page.$(selector)).toBeDisabled(true);
+    await expect(await page.$(selector)).toBeDisabled();
   });
 
   test('verify method with [page, selector] Array', async ({ page }) => {

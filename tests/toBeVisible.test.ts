@@ -15,12 +15,18 @@ test.describe('toBeVisible', () => {
   test('verify method with ElementHandle', async ({ page }) => {
     await page.setContent('<button id="btn">Click me</button>');
 
-    await expect(await page.$(selector)).toBeVisible(true);
+    await expect(await page.$(selector)).toBeVisible();
   });
 
   test('verify method with [page, selector] Array', async ({ page }) => {
     await page.setContent('<span></span>');
 
     await expect([page, selector]).toBeVisible(false);
+  });
+
+  test('verify method with [page, selector] Array with opposite `not`', async ({ page }) => {
+    await page.setContent('<span></span>');
+
+    await expect([page, selector]).not.toBeVisible();
   });
 });

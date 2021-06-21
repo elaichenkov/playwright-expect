@@ -42,12 +42,12 @@ declare global {
       toContainUrl(expectedUrl: RegExp | string, options?: PageWaitForUrlOptions): Promise<R>;
       toHaveTitle(expectedTitle: string, options?: Options): Promise<R>;
       toContainTitle(expectedTitle: string, options?: Options): Promise<R>;
-      toBeFocused(expectedState: boolean, options?: Options): Promise<R>;
+      toBeFocused(expectedState?: boolean, options?: Options): Promise<R>;
       toHaveValue(expectedValue: string, options?: Options): Promise<R>;
       toContainValue(expectedValue: string, options?: Options): Promise<R>;
-      toBeEnabled(expectedState: boolean, options?: Options): Promise<R>;
-      toBeDisabled(expectedState: boolean, options?: Options): Promise<R>;
-      toBeVisible(expectedState: boolean, options?: Options): Promise<R>;
+      toBeEnabled(expectedState?: boolean, options?: Options): Promise<R>;
+      toBeDisabled(expectedState?: boolean, options?: Options): Promise<R>;
+      toBeVisible(expectedState?: boolean, options?: Options): Promise<R>;
       toHaveCount(expectedCount: number): Promise<R>;
       /**
        * Match snapshot

@@ -15,7 +15,7 @@ test.describe('toBeFocused', () => {
   test('verify method with ElementHandle', async ({ page }) => {
     await page.focus(selector);
 
-    await expect(await page.$(selector)).toBeFocused(true);
+    await expect(await page.$(selector)).toBeFocused();
   });
 
   test('verify method with [page, selector] Array', async ({ page }) => {

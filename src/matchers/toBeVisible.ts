@@ -30,7 +30,7 @@ import { getErrorMessage, getElementHandle } from '../utils/utils';
 export async function toBeVisible(
   this: jest.MatcherContext,
   element: UIElement,
-  expectedState: boolean,
+  expectedState = true,
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
