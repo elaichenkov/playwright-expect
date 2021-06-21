@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "prepublishOnly": "npm run format && npm test",
     "version": "npm run format",
     "build": "tsc",
     "test": "npx playwright test",
