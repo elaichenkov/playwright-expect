@@ -24,9 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
-
-      - uses: microsoft/playwright-github-action@v1
-
-      - name: Install dependencies and run tests
-        run: npm install && npm test
+      - name: Install dependencies
+        run: npm install && npx playwright install-deps
+  
+      - name: Run tests
+        run: npm test 
