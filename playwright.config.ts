@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { PlaywrightTestConfig, expect } from '@playwright/test';
-import playwrightMatchers from './src/matchers';
+import { matchers } from './src';
 
-expect.extend(playwrightMatchers);
+expect.extend(matchers);
 
 const config: PlaywrightTestConfig = {
   // Add use property for all projects (browsers)
