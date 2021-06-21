@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "The playwright-expect is an assertion library for TypeScript and JavaScript intended for use with a test runner such as Jest or Playwright Test.",
   "main": "lib/index.js",
-  "types": "./global.d.ts",
+  "types": "./index.d.ts",
   "files": [
     "lib"
   ],
