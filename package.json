@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "./global.d.ts",
   "files": [
-    "lib/src"
+    "lib"
   ],
   "scripts": {
     "prepare": "npm run build",
