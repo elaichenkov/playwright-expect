@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import customMatchers from './matchers/index';
+import matchers from './matchers/index';
 
 // @ts-ignore
 if (global.expect) {
   // @ts-ignore
-  global.expect.extend(customMatchers);
+  global.expect.extend(matchers);
 }
 
-export { customMatchers };
+export { matchers };
