@@ -38,7 +38,7 @@ npm i -D expect-playwright-test
 
 # Examples
 
-> Almost all methods can accept element in different ways:
+> Almost all methods can accept element in three ways:
 > 1. ElementHandle
 > 2. Promise\<ElementHandle>
 > 3. [page, selector]
