@@ -48,6 +48,7 @@ declare global {
       toBeEnabled(expectedState: boolean, options?: Options): Promise<R>;
       toBeDisabled(expectedState: boolean, options?: Options): Promise<R>;
       toBeVisible(expectedState: boolean, options?: Options): Promise<R>;
+      toHaveCount(expectedCount: number): Promise<R>;
       /**
        * Match snapshot
        */

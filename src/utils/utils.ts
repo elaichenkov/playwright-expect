@@ -1,6 +1,6 @@
 import type { ElementHandle } from 'playwright-core';
-import { DEFAULT_OPTIONS } from './constants';
-import type { PageWaitForSelectorOptions, UIElement } from './types';
+import { DEFAULT_OPTIONS, DEFAULT_TIMEOUT } from './constants';
+import type { PageWaitForSelectorOptions, UIElement, UIElements } from './types';
 
 // eslint-disable-next-line consistent-return
 export async function getElementHandle(
@@ -14,7 +14,7 @@ export async function getElementHandle(
     if (waitOptions) {
       const elementHandle = await page.waitForSelector(selector, {
         state: waitOptions.state ?? 'visible',
-        timeout: waitOptions.timeout ?? 30000,
+        timeout: waitOptions.timeout ?? DEFAULT_TIMEOUT,
       });
 
       if (elementHandle) return elementHandle;
@@ -30,7 +30,7 @@ export async function getElementHandle(
         await element
       ).waitForSelector(waitOptions.selector, {
         state: waitOptions.state || 'visible',
-        timeout: waitOptions.timeout || 30000,
+        timeout: waitOptions.timeout || DEFAULT_TIMEOUT,
       });
     }
 
@@ -42,7 +42,7 @@ export async function getElementHandle(
         await element
       ).waitForSelector(waitOptions.selector, {
         state: waitOptions.state || 'visible',
-        timeout: waitOptions.timeout || 30000,
+        timeout: waitOptions.timeout || DEFAULT_TIMEOUT,
       });
     }
 
@@ -50,6 +50,27 @@ export async function getElementHandle(
   }
 
   return null;
+}
+
+export async function getElements(elements: UIElements): Promise<Array<ElementHandle>> {
+  let elementHandles;
+  if (Array.isArray(elements) && elements[0].constructor.name === 'Page' && typeof elements[1] === 'string') {
+    const [page, selector] = elements;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    elementHandles = await page.$$(selector);
+  } else if (elements instanceof Promise) {
+    elementHandles = await elements;
+
+    return elementHandles;
+  } else {
+    elementHandles = elements;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return elementHandles;
 }
 
 export async function getValue(elementHandle: Promise<ElementHandle<Node>>): Promise<string> {

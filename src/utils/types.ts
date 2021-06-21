@@ -13,6 +13,7 @@ export type PageSelector = [page: Page, selector: string];
  * @typedef {Promise<ElementHandle<Node>> | ElementHandle<Node> | PageSelector} UIElement
  */
 export type UIElement = Promise<ElementHandle<Node>> | ElementHandle<Node> | PageSelector;
+export type UIElements = Promise<Array<ElementHandle>> | Array<ElementHandle> | PageSelector;
 
 export type Options = {
   textMethod?: 'textContent' | 'innerText';

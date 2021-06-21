@@ -11,6 +11,7 @@ import { toContainValue } from './toContainValue';
 import { toBeEnabled } from './toBeEnabled';
 import { toBeDisabled } from './toBeDisabled';
 import { toBeVisible } from './toBeVisible';
+import { toHaveCount } from './toHaveCount';
 
 export default {
   toHaveText,
@@ -26,4 +27,5 @@ export default {
   toBeEnabled,
   toBeDisabled,
   toBeVisible,
+  toHaveCount,
 };

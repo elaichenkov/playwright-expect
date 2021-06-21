@@ -9,3 +9,4 @@ export const DEFAULT_OPTIONS: Options = {
 };
 
 export const BASE_URL = 'http://the-internet.herokuapp.com';
+export const DEFAULT_TIMEOUT = 30000;
