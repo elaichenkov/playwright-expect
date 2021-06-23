@@ -3,9 +3,12 @@
 The `playwright-expect` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as [Jest](https://jestjs.io/) or [Playwright Test](https://playwright.dev/). It lets you write better assertions for end-to-end testing.
 
 # Motivation
+***TL;DR:***
 > [expect-playwright](https://github.com/playwright-community/expect-playwright) is a great library, but it contains a few methods.
 
-And [playwright-expect](https://github.com/elaichenkov/playwright-expect) is a great library too, with all major methods and extra features such as waits, ignore case sensitive, trim. All in all, It has everything that you demand to accomplish end-to-end testing needs.
+[playwright-expect](https://github.com/elaichenkov/playwright-expect) is a great library too, with all major methods and extra features such as waits, ignore case sensitive, trim. All in all, It has everything that you demand to accomplish end-to-end testing needs.
+
+***Please, read more about [motivation and main features](https://elaichenkov.medium.com/expect-more-with-playwright-expect-5eb4e23d3916).***
 
 # Key Features
 * rich and easy to use;
