@@ -25,4 +25,15 @@ test.describe('toHaveText', () => {
 
     await expect([page, selector]).toHaveText(expectedText, { textMethod: 'innerText' });
   });
+
+  test('verify method with [page, selector] and wait options', async ({ page }) => {
+    const timeout = 3000;
+    const EXPECTED_TEXT = 'Success';
+
+    setTimeout(() => {
+      page.setContent(`<span id="toast"> ${EXPECTED_TEXT} </span>`);
+    }, 1000);
+
+    await expect([page, '#toast']).toHaveText(EXPECTED_TEXT, { timeout, trim: true });
+  });
 });

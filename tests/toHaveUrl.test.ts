@@ -15,4 +15,15 @@ test.describe('toHaveUrl', () => {
   test('verify method negative', async ({ page }) => {
     await expect(page).not.toHaveUrl(BASE_URL);
   });
+
+  test('verify method with wait options', async ({ page }) => {
+    const expectedUrl = `${BASE_URL}/status_codes`;
+    const timeout = 3000;
+
+    setTimeout(async () => {
+      await page.goto(expectedUrl);
+    }, 1000);
+
+    await expect(page).toHaveUrl(expectedUrl, { timeout });
+  });
 });

@@ -34,12 +34,12 @@ export async function toBeFocused(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = await getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     const actualState = await elementHandle.evaluate((el: HTMLElement) => el === document.activeElement);
 
     return {
       pass: actualState === expectedState,
-      message: () => getErrorMessage(this, 'toBeFocused', expectedState.toString(), actualState.toString()),
+      message: () => getErrorMessage(this, 'toBeFocused', expectedState, actualState),
     };
   } catch (error) {
     return {

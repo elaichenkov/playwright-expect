@@ -24,4 +24,15 @@ test.describe('toContainText', () => {
 
     await expect([page, selector]).toContainText(expectedText, { textMethod: 'innerText' });
   });
+
+  test('verify method with [page, selector] Array and wait options', async ({ page }) => {
+    const expectedText = 'cool';
+    const timeout = 3000;
+
+    setTimeout(async () => {
+      await page.setContent(`<span id="tick">${expectedText}</span>`);
+    }, 1000);
+
+    await expect([page, '#tick']).toContainText(expectedText, { timeout });
+  });
 });

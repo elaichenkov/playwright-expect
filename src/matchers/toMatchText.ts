@@ -33,7 +33,7 @@ export async function toMatchText(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     const actualText = await getText(elementHandle, options?.textMethod);
 
     return {

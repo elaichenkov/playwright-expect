@@ -1,7 +1,7 @@
 import type { SyncExpectationResult } from 'expect/build/types';
+import { UIElement } from '../utils/types';
 import type { Options } from '../utils/types';
 
-import { UIElement } from '../utils/types';
 import { getErrorMessage, getText, getElementHandle, formatText } from '../utils/utils';
 
 /**
@@ -36,7 +36,7 @@ export async function toHaveText(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     let actualText = await getText(elementHandle, options?.textMethod);
 
     if (options?.ignoreCase) {

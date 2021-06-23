@@ -36,7 +36,7 @@ export async function toHaveValue(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     let actualValue = await getValue(elementHandle);
 
     if (options?.ignoreCase) {

@@ -1,3 +1,4 @@
+import type { ElementHandle } from 'playwright-core';
 import type { SyncExpectationResult } from 'expect/build/types';
 import type { Options } from '../utils/types';
 
@@ -34,16 +35,16 @@ export async function toBeVisible(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = await getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options).catch(() => false);
     let actualState = false;
 
     if (elementHandle) {
-      actualState = await elementHandle.isVisible();
+      actualState = await (elementHandle as ElementHandle).isVisible();
     }
 
     return {
       pass: actualState === expectedState,
-      message: () => getErrorMessage(this, 'toBeVisible', expectedState.toString(), actualState.toString()),
+      message: () => getErrorMessage(this, 'toBeVisible', expectedState, actualState),
     };
   } catch (error) {
     return {

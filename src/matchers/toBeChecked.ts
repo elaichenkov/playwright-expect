@@ -34,12 +34,12 @@ export async function toBeChecked(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = await getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     const actualState = await elementHandle.isChecked();
 
     return {
       pass: actualState === expectedState,
-      message: () => getErrorMessage(this, 'toBeChecked', expectedState.toString(), actualState.toString()),
+      message: () => getErrorMessage(this, 'toBeChecked', expectedState, actualState),
     };
   } catch (error) {
     return {

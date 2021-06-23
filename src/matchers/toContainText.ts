@@ -36,8 +36,7 @@ export async function toContainText(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = getElementHandle(element, options?.waitForState);
-
+    const elementHandle = await getElementHandle(element, options);
     if (!elementHandle) throw new Error(`Element ${elementHandle} wasn't found`);
 
     let actualText = await getText(elementHandle, options?.textMethod);

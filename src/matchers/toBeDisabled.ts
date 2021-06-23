@@ -34,12 +34,12 @@ export async function toBeDisabled(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = await getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     const actualState = await elementHandle.isDisabled();
 
     return {
       pass: actualState === expectedState,
-      message: () => getErrorMessage(this, 'toBeDisabled', expectedState.toString(), actualState.toString()),
+      message: () => getErrorMessage(this, 'toBeDisabled', expectedState, actualState),
     };
   } catch (error) {
     return {

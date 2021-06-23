@@ -34,12 +34,12 @@ export async function toBeEnabled(
   options?: Options,
 ): Promise<SyncExpectationResult> {
   try {
-    const elementHandle = await getElementHandle(element, options?.waitForState);
+    const elementHandle = await getElementHandle(element, options);
     const actualState = await elementHandle.isEnabled();
 
     return {
       pass: actualState === expectedState,
-      message: () => getErrorMessage(this, 'toBeEnabled', expectedState.toString(), actualState.toString()),
+      message: () => getErrorMessage(this, 'toBeEnabled', expectedState, actualState),
     };
   } catch (error) {
     return {

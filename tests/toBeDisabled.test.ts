@@ -22,4 +22,14 @@ test.describe('toBeDisabled', () => {
   test('verify method with [page, selector] Array', async ({ page }) => {
     await expect([page, selector]).not.toBeDisabled(true);
   });
+
+  test('verify method with [page, selector] Array and wait options', async ({ page }) => {
+    const timeout = 3000;
+
+    setTimeout(async () => {
+      await page.setContent('<input type="checkbox" id="tick" disabled>');
+    }, 1000);
+
+    await expect([page, '#tick']).toBeDisabled(true, { timeout });
+  });
 });

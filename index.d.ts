@@ -1,24 +1,30 @@
 import type expect from 'expect';
-import type { Options, PageWaitForUrlOptions } from './src/utils/types';
+
+type Options = {
+  textMethod?: 'textContent' | 'innerText';
+  ignoreCase?: boolean;
+  trim?: boolean;
+  timeout?: number;
+  state?: 'visible' | 'attached';
+};
+
+type PageWaitForUrlOptions = {
+  timeout: number;
+  waitUntil?: 'load' | 'domcontentloaded' | 'networkidle';
+};
+
 declare global {
   namespace PlaywrightTest {
+    namespace jest {
+      type Matchers<R> = PlaywrightTest.Matchers<R>;
+    }
     interface Matchers<R> extends expect.Matchers<R> {
-      /**
-       * If you know how to test something, `.not` lets you test its opposite.
-       */
+      /** Playwright default helpers */
       not: PlaywrightTest.Matchers<R>;
-      /**
-       * Use resolves to unwrap the value of a fulfilled promise so any other
-       * matcher can be chained. If the promise is rejected the assertion fails.
-       */
       resolves: PlaywrightTest.Matchers<Promise<R>>;
-      /**
-       * Unwraps the reason of a rejected promise so any other matcher can be chained.
-       * If the promise is fulfilled the assertion fails.
-       */
       rejects: PlaywrightTest.Matchers<Promise<R>>;
 
-      //* Custom matchers */
+      /** Custom matchers */
       toHaveText(expectedText: string, options?: Options): Promise<R>;
       toContainText(expectedText: string, options?: Options): Promise<R>;
       toMatchText(expectedPattern: RegExp | string, options?: Options): Promise<R>;
@@ -34,25 +40,10 @@ declare global {
       toBeDisabled(expectedState?: boolean, options?: Options): Promise<R>;
       toBeVisible(expectedState?: boolean, options?: Options): Promise<R>;
       toHaveCount(expectedCount: number): Promise<R>;
-      /**
-       * Match snapshot
-       */
+
+      /** Playwright default matchers */
       toMatchSnapshot(options?: { name?: string; threshold?: number }): R;
-      /**
-       * Match snapshot
-       */
-      toMatchSnapshot(
-        name: string,
-        options?: {
-          threshold?: number;
-        },
-      ): R;
+      toMatchSnapshot(name: string, options?: { threshold?: number }): R;
     }
   }
-
-  namespace jest {
-    type Matchers<R> = PlaywrightTest.Matchers<R>;
-  }
 }
-
-export const matchers: any;

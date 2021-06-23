@@ -29,4 +29,14 @@ test.describe('toBeVisible', () => {
 
     await expect([page, selector]).not.toBeVisible();
   });
+
+  test('verify method with [page, selector] Array and wait options', async ({ page }) => {
+    const timeout = 3000;
+
+    setTimeout(async () => {
+      await page.setContent('<input type="checkbox" id="tick">');
+    }, 1000);
+
+    await expect([page, '#tick']).toBeVisible(true, { timeout });
+  });
 });

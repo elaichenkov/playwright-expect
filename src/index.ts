@@ -1,3 +1,3 @@
-import matchers from './matchers/index';
+import matchers from './matchers';
 
 export { matchers };

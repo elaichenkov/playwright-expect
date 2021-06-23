@@ -13,4 +13,14 @@ test.describe('toContainUrl', () => {
   test('verify method negative', async ({ page }) => {
     await expect(page).not.toContainUrl(`${BASE_URL}/1`);
   });
+
+  test('verify method with wait options', async ({ page }) => {
+    const timeout = 3000;
+
+    setTimeout(async () => {
+      await page.goto(`${BASE_URL}/status_codes`);
+    }, 1000);
+
+    await expect(page).toContainUrl('status_codes', { timeout });
+  });
 });

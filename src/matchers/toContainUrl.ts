@@ -29,7 +29,7 @@ export async function toContainUrl(
 ): Promise<SyncExpectationResult> {
   try {
     if (options?.timeout) {
-      await page.waitForURL(expectedUrl, { timeout: options.timeout });
+      await page.waitForURL(new RegExp(`${expectedUrl}`), { timeout: options.timeout });
     }
 
     const actualUrl = page.url();
