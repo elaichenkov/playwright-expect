@@ -63,10 +63,10 @@ expect.extend(matchers);
 
 # Examples
 
-> Almost all methods can accept element in three ways:
-> 1. ElementHandle
-> 2. Promise\<ElementHandle>
-> 3. [page, selector]
+> All methods, which expects element can accept element in three ways:
+> 1. [page, selector] (*recommended*) 
+> 2. ElementHandle
+> 3. Promise\<ElementHandle>
 ## Use `toHaveText` to check that element's text equals to the expected
 
 ```typescript
@@ -80,7 +80,16 @@ await expect(page.$('h1')).toHaveText('Home');
 
 // Using an array of page and selector. Furthermore, you can pass options such as ignoreCase and trim
 await expect([page, 'h1']).toHaveText('home', { ignoreCase: true });
+
+// Even more, you can wait for the element before asserting
+await expect([page, '.notification']).toHaveText('Success', { timeout: 15000 });
+
+// Also, it could be useful to fail fast, by default it waits for the 10 seconds
+await expect([page, '.notification']).toHaveText('success', { timeout: 1000, trim: true });
 ```
+> NOTE:
+> You can wait for the element only using the [page, selector] approach
+
 ## Use `toBeVisible` to check that element is visible
 ```typescript
 // Using ElementHandle
