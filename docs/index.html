@@ -59,7 +59,7 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<a href="#playwright-expect-" id="playwright-expect-" style="color: inherit; text-decoration: none;">
-					<h1>playwright-expect <a href="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml"><img src="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg" alt="tests"></a></h1>
+					<h1>playwright-expect <a href="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml"><img src="https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg" alt="Test"></a></h1>
 				</a>
 				<p>The <code>playwright-expect</code> is an assertion library for TypeScript and JavaScript intended for use with a test runner such as <a href="https://jestjs.io/">Jest</a> or <a href="https://playwright.dev/">Playwright Test</a>. It lets you write better assertions for end-to-end testing.</p>
 				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
@@ -83,27 +83,53 @@
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h1>Usage</h1>
 				</a>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
 				<pre><code class="language-sh"><span style="color: #000000">npm i -D playwright-expect</span>
 </code></pre>
-				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-					<h1><a href="">API</a></h1>
+				<a href="#playwright-test---typescript" id="playwright-test---typescript" style="color: inherit; text-decoration: none;">
+					<h2>Playwright Test - TypeScript</h2>
 				</a>
+				<pre><code class="language-typescript"><span style="color: #008000">// playwright.config.ts</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">expect</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@playwright/test&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">matchers</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;playwright-expect&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #008000">// add custom matchers</span>
+<span style="color: #001080">expect</span><span style="color: #000000">.</span><span style="color: #795E26">extend</span><span style="color: #000000">(</span><span style="color: #001080">matchers</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#playwright-test---javascript" id="playwright-test---javascript" style="color: inherit; text-decoration: none;">
+					<h2>Playwright Test - JavaScript</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #008000">// playwright.config.js</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">expect</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@playwright/test&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">matchers</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;playwright-expect&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// add custom matchers</span>
+<span style="color: #001080">expect</span><span style="color: #000000">.</span><span style="color: #795E26">extend</span><span style="color: #000000">(</span><span style="color: #001080">matchers</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h1><a href="https://elaichenkov.github.io/playwright-expect/modules.html">API</a></h1>
+				</a>
+				<blockquote>
+					<p>Please, read <a href="https://elaichenkov.github.io/playwright-expect/modules.html">API</a> documentation</p>
+				</blockquote>
 				<ul>
-					<li>toBeDisabled</li>
-					<li>toBeEnabled</li>
-					<li>toBeChecked</li>
-					<li>toBeFocused</li>
-					<li>toBeVisible</li>
-					<li>toContainText</li>
-					<li>toContainTitle</li>
-					<li>toContainUrl</li>
-					<li>toContainValue</li>
-					<li>toHaveCount</li>
-					<li>toHaveText</li>
-					<li>toHaveTitle</li>
-					<li>toHaveUrl</li>
-					<li>toHaveValue</li>
-					<li>toMatchText</li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tobedisabled.html">toBeDisabled</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tobeenabled.html">toBeEnabled</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tobechecked.html">toBeChecked</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tobefocused.html">toBeFocused</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tobevisible.html">toBeVisible</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tocontaintext.html">toContainText</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tocontaintitle.html">toContainTitle</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tocontainurl.html">toContainUrl</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tocontainvalue.html">toContainValue</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tohavecount.html">toHaveCount</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tohavetext.html">toHaveText</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tohavetitle.html">toHaveTitle</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tohaveurl.html">toHaveUrl</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tohavevalue.html">toHaveValue</a></li>
+					<li><a href="https://elaichenkov.github.io/playwright-expect/modules/tomatchtext.html">toMatchText</a></li>
 				</ul>
 				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
 					<h1>Examples</h1>
