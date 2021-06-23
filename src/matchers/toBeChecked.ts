@@ -5,7 +5,7 @@ import { UIElement } from '../utils/types';
 import { getErrorMessage, getElementHandle } from '../utils/utils';
 
 /**
- * Use `toBeChecked` function when you want to check that an element is enabled
+ * Use `toBeChecked` function when you want to check that an element is checked
  *
  * @example
  * ```typescript

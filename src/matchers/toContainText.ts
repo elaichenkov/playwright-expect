@@ -17,10 +17,10 @@ import { getErrorMessage, getText, getElementHandle, formatText } from '../utils
  * await expect(toastElement).toContainText('Success');
  *
  * // or using an array of page and selector
- * await expect([page, '.alert']).toHaveText('Success');
+ * await expect([page, '.alert']).toContain('Success');
  *
  * // also you can check text ignoring case sensitive
- * await expect(page.$('.alert')).toHaveText('success', {ignoreCase: true})
+ * await expect(page.$('.alert')).toContain('success', {ignoreCase: true})
  * ```
  *
  * @param this
