@@ -18,7 +18,7 @@ test.describe('toHaveUrl', () => {
 
   test('verify method with wait options', async ({ page }) => {
     const expectedUrl = `${BASE_URL}/status_codes`;
-    const timeout = 3000;
+    const timeout = 5000;
 
     setTimeout(async () => {
       await page.goto(expectedUrl);

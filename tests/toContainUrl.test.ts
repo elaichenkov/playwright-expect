@@ -15,7 +15,7 @@ test.describe('toContainUrl', () => {
   });
 
   test('verify method with wait options', async ({ page }) => {
-    const timeout = 3000;
+    const timeout = 5000;
 
     setTimeout(async () => {
       await page.goto(`${BASE_URL}/status_codes`);
