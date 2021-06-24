@@ -1,4 +1,9 @@
-# playwright-expect [![Test](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml)
+# playwright-expect
+[![Test](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml)
+[![Total npm downloads](https://img.shields.io/npm/dt/playwright-expect.svg)](https://www.npmjs.com/package/playwright-expect)
+[![NPM version](https://img.shields.io/npm/v/playwright-expect.svg)](https://www.npmjs.com/package/playwright-expect) 
+[![Commits](https://img.shields.io/github/commit-activity/m/elaichenkov/playwright-expect.svg)](https://github.com/elaichenkov/playwright-expect/commits/main)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 The `playwright-expect` is an assertion library for TypeScript and JavaScript intended for use with a test runner such as [Jest](https://jestjs.io/) or [Playwright Test](https://playwright.dev/). It lets you write better assertions for end-to-end testing.
 
