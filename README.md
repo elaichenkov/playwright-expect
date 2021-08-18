@@ -1,3 +1,6 @@
+# Deprecated!
+Please, use built-in Playwright assertions.
+
 # playwright-expect
 [![Test](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml/badge.svg)](https://github.com/elaichenkov/playwright-expect/actions/workflows/tests.yml)
 [![Total npm downloads](https://img.shields.io/npm/dt/playwright-expect.svg)](https://www.npmjs.com/package/playwright-expect)
